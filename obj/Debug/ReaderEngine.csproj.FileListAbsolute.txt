@@ -42,3 +42,49 @@ C:\Users\mis\source\repos\ReaderEngine\obj\Debug\ReaderEngine.exe
 C:\Users\mis\source\repos\ReaderEngine\obj\Debug\ReaderEngine.pdb
 C:\Users\mis\source\repos\ReaderEngine\obj\Debug\ReaderEngine.csprojAssemblyReference.cache
 C:\Users\mis\source\repos\ReaderEngine\bin\Debug\Ubiety.Dns.Core.dll
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\ReaderEngine.exe.config
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\ReaderEngine.exe
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\ReaderEngine.pdb
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\BouncyCastle.Crypto.dll
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\ClosedXML.dll
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\DocumentFormat.OpenXml.dll
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\ExcelNumberFormat.dll
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\Google.Protobuf.dll
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\K4os.Compression.LZ4.dll
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\K4os.Hash.xxHash.dll
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\MySql.Data.dll
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\MySqlConnector.dll
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\System.Buffers.dll
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\System.Memory.dll
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\Ubiety.Dns.Core.dll
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\ZstdNet.dll
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\ClosedXML.pdb
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\ClosedXML.xml
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\DocumentFormat.OpenXml.xml
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\ExcelNumberFormat.xml
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\Google.Protobuf.pdb
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\Google.Protobuf.xml
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\K4os.Compression.LZ4.xml
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\K4os.Compression.LZ4.Streams.xml
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\K4os.Hash.xxHash.xml
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\MySql.Data.xml
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\MySqlConnector.xml
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\System.Buffers.xml
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\System.Memory.xml
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\obj\Debug\ReaderEngine.csproj.AssemblyReference.cache
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\obj\Debug\ReaderEngine.frmMain.resources
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\obj\Debug\ReaderEngine.Properties.Resources.resources
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\obj\Debug\ReaderEngine.csproj.GenerateResource.cache
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\obj\Debug\ReaderEngine.csproj.CoreCompileInputs.cache
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\obj\Debug\ReaderEngine.csproj.CopyComplete
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\obj\Debug\ReaderEngine.exe
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\obj\Debug\ReaderEngine.pdb
+E:\BIOVTA8\Clients\SatNusa\Attendance App\Attendance App\ReaderEngine\ReaderEngine\obj\Debug\ReaderEngine.csproj.ResolveComReference.cache
+C:\Users\mis\source\repos\ReaderEngine\obj\Debug\ReaderEngine.csproj.ResolveComReference.cache

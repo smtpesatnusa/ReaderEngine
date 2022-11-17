@@ -11,7 +11,7 @@ namespace ReaderEngine
         //static string host = "localhost"; //"192.168.192.150";
         //static string database = "smt_attendance";
         //static string userDB = "root"; //"smt_developer";
-        //static string password = "otadmin"; //"w(v97weP8UGe=bYd";
+        //static string password = "MyP4ssw@rd"; //"w(v97weP8UGe=bYd";
 
         static string host = "192.168.192.150";
         static string database = "smt_attendance";
