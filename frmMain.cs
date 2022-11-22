@@ -14,6 +14,7 @@ namespace ReaderEngine
     {
         private string Sql;
         MySqlConnection myConn;
+        string fileReport;
         public frmMain()
         {
             InitializeComponent();
@@ -261,7 +262,7 @@ namespace ReaderEngine
                 mailMessage.SubjectEncoding = System.Text.Encoding.UTF8;
                 mailMessage.To.Add(mailaddr);
                 mailMessage.From = new MailAddress("support@rytechindo.com", "Support", System.Text.Encoding.UTF8);
-                mailMessage.Subject = "Attendance Report";
+                mailMessage.Subject = "Attendance Report "+DateTime.Now.ToString() ;
                 mailMessage.Body = strBody;
                 mailMessage.IsBodyHtml = true;
 
@@ -300,7 +301,8 @@ namespace ReaderEngine
             MsOutlook.Accounts accounts = objOutlook.Session.Accounts;
             MsOutlook.Account acc = null;
 
-            string accSender = "support@rytechindo.com";
+            //string accSender = "tesemail1922@gmail.com";
+            string accSender = "netrayaattendance@gmail.com";
 
             foreach (MsOutlook.Account account in accounts)
             {
@@ -332,7 +334,7 @@ namespace ReaderEngine
                     {
 
                         newMail.To = mailaddr;
-                        newMail.Subject = "Attendance report";
+                        newMail.Subject = "Attendance report "+ DateTime.Now.AddDays(-1).ToString("MMM dd, yyyy");
                         string strBody = "Dear " + nama + "\n";
                         strBody += "Please find the attendance reports attached\n";
                         newMail.Body = strBody;
@@ -366,7 +368,7 @@ namespace ReaderEngine
                 string koneksi = ConnectionDB.strProvider;
                 myConn = new MySqlConnection(koneksi);
 
-                string date = DateTime.Now.AddDays(-3).ToString("yyyy-MM-dd");
+                string date = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
                 string directoryFile = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 directoryFile = directoryFile + "\\Attendance-SMT";
                 using (var workbook = new XLWorkbook())
@@ -771,7 +773,8 @@ namespace ReaderEngine
                             }
                             workbook.SaveAs(directoryFile + "\\" + date + "\\Summary "+date+".xlsx");
                 }
-                System.Diagnostics.Process.Start(@"" + directoryFile + "\\" + date + "\\Summary " + date + ".xlsx");
+                fileReport = directoryFile + "\\" + date + "\\Summary " + date + ".xlsx";
+                //System.Diagnostics.Process.Start(@"" + directoryFile + "\\" + date + "\\Summary " + date + ".xlsx");
                 //MessageBox.Show(this, "Excel File Success Generated", "Generate Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -898,6 +901,12 @@ namespace ReaderEngine
                 }
             }
 
+
+            if (DateTime.Now.ToString("HH:mm") == "10:30")
+            {
+                //----save to file/xls----
+                ExportToExcel();
+            }
             // running process attendance
             //try
             //{
@@ -937,8 +946,13 @@ namespace ReaderEngine
 
             //----save to file/xls----
             ExportToExcel();
+            //sendto email
+            if (SendMail("ali.sadikin@satnusa.com", "Ali Sadikin", fileReport))
+            {
+                MessageBox.Show("email sent!");
+            }
 
-            //if (SendMail("tesemail1922@gmail.com", "Test Email", ""))
+            //if (SendMail("tesemail1922@gmail.com", "Test Email", fileReport))
             //{
             //    MessageBox.Show("email sent!");
             //}
