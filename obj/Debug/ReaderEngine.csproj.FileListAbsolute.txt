@@ -88,7 +88,6 @@ C:\Users\mis\source\repos\ReaderEngine\obj\Debug\ReaderEngine.csproj.CopyComplet
 C:\Users\mis\source\repos\ReaderEngine\obj\Debug\ReaderEngine.exe
 C:\Users\mis\source\repos\ReaderEngine\obj\Debug\ReaderEngine.pdb
 C:\Users\mis\source\repos\ReaderEngine\obj\Debug\ReaderEngine.csprojAssemblyReference.cache
-C:\Users\ASD-0131\source\repos\ReaderEngine\obj\Debug\ReaderEngine.csproj.AssemblyReference.cache
 C:\Users\ASD-0131\source\repos\ReaderEngine\bin\Debug\ReaderEngine.exe.config
 C:\Users\ASD-0131\source\repos\ReaderEngine\bin\Debug\ReaderEngine.exe
 C:\Users\ASD-0131\source\repos\ReaderEngine\bin\Debug\ReaderEngine.pdb
@@ -125,6 +124,7 @@ C:\Users\ASD-0131\source\repos\ReaderEngine\bin\Debug\System.Diagnostics.Diagnos
 C:\Users\ASD-0131\source\repos\ReaderEngine\bin\Debug\System.Memory.xml
 C:\Users\ASD-0131\source\repos\ReaderEngine\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\ASD-0131\source\repos\ReaderEngine\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ASD-0131\source\repos\ReaderEngine\obj\Debug\ReaderEngine.csproj.AssemblyReference.cache
 C:\Users\ASD-0131\source\repos\ReaderEngine\obj\Debug\Interop.Microsoft.Office.Core.dll
 C:\Users\ASD-0131\source\repos\ReaderEngine\obj\Debug\Interop.Microsoft.Office.Interop.Outlook.dll
 C:\Users\ASD-0131\source\repos\ReaderEngine\obj\Debug\ReaderEngine.csproj.ResolveComReference.cache

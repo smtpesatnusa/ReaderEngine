@@ -224,9 +224,6 @@ namespace ReaderEngine
                     }
                 }
 
-                ////----save to file/xls----
-                //ExportToExcel();
-
                 ////---send file via email---
                 //SendMail("ali.sadikincom85@gmail.com", "Ali Sadikin", "e:\\Summary.xlsx");
                 //SendMail("ali.sadikin@satnusa.com", "Ali Sadikin", "e:\\Summary.xlsx");
@@ -869,10 +866,10 @@ namespace ReaderEngine
         private void timer_Tick(object sender, EventArgs e)
         {
             string now = null;
-
             dateTimeNow.Text = DateTime.Now.ToString("HH:mm");
             now = DateTime.Now.ToString("HH:mm:00");
 
+            // running process attendance
             int j = dataGridViewProcessTime.RowCount;
             if (j > 0)
             {
@@ -883,7 +880,6 @@ namespace ReaderEngine
                     if (cellString == now)
                     {
                         timer.Stop();
-
                         try
                         {
                             processTransaction();
@@ -901,35 +897,18 @@ namespace ReaderEngine
                 }
             }
 
-
+            // running process send export email
             if (DateTime.Now.ToString("HH:mm") == "10:30")
             {
                 //----save to file/xls----
                 ExportToExcel();
+                //sendto email
+                if (SendMail("ali.sadikin@satnusa.com", "Ali Sadikin", fileReport))
+                {
+                    //MessageBox.Show("email sent!");
+                }
             }
-            // running process attendance
-            //try
-            //{
-            //    string query = "SELECT TIME FROM tbl_processTimer WHERE TIME = '" + now + "'";
-            //    using (MySqlDataAdapter adpt = new MySqlDataAdapter(query, connectionDB.connection))
-            //    {
-            //        DataSet dset = new DataSet();
-            //        adpt.Fill(dset);
-            //        if (dset.Tables[0].Rows.Count > 0)
-            //        {
-            //            processTransaction();
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    connectionDB.connection.Close();
-            //    MessageBox.Show(ex.Message);
-            //}
-            //finally
-            //{
-            //    connectionDB.connection.Close();
-            //}
+            
         }
 
         private void btnMail_Click(object sender, EventArgs e)
@@ -947,7 +926,7 @@ namespace ReaderEngine
             //----save to file/xls----
             ExportToExcel();
             //sendto email
-            if (SendMail("ali.sadikin@satnusa.com", "Ali Sadikin", fileReport))
+            if (SendMail("tesemail1922@gmail.com", "Tes", fileReport))
             {
                 MessageBox.Show("email sent!");
             }

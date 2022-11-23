@@ -58,10 +58,9 @@ namespace ReaderEngine
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 17);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(15, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 17);
+            this.label1.Size = new System.Drawing.Size(215, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Process Time Scheduler";
             // 
@@ -72,13 +71,13 @@ namespace ReaderEngine
             this.dataGridViewProcessTime.AllowUserToResizeColumns = false;
             this.dataGridViewProcessTime.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewProcessTime.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProcessTime.Location = new System.Drawing.Point(2, 2);
-            this.dataGridViewProcessTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewProcessTime.Location = new System.Drawing.Point(3, 2);
+            this.dataGridViewProcessTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewProcessTime.Name = "dataGridViewProcessTime";
             this.dataGridViewProcessTime.ReadOnly = true;
             this.dataGridViewProcessTime.RowHeadersWidth = 51;
             this.dataGridViewProcessTime.RowTemplate.Height = 24;
-            this.dataGridViewProcessTime.Size = new System.Drawing.Size(173, 341);
+            this.dataGridViewProcessTime.Size = new System.Drawing.Size(231, 420);
             this.dataGridViewProcessTime.TabIndex = 1;
             this.dataGridViewProcessTime.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProcessTime_CellContentClick);
             // 
@@ -89,18 +88,18 @@ namespace ReaderEngine
             this.panel1.Controls.Add(this.dateTimePickerTimer);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dataGridViewProcessTime);
-            this.panel1.Location = new System.Drawing.Point(12, 41);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(16, 50);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(178, 422);
+            this.panel1.Size = new System.Drawing.Size(237, 519);
             this.panel1.TabIndex = 2;
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(102, 386);
-            this.deleteBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteBtn.Location = new System.Drawing.Point(136, 475);
+            this.deleteBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(64, 23);
+            this.deleteBtn.Size = new System.Drawing.Size(85, 28);
             this.deleteBtn.TabIndex = 6;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = true;
@@ -108,10 +107,10 @@ namespace ReaderEngine
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(15, 386);
-            this.addBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addBtn.Location = new System.Drawing.Point(20, 475);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(64, 23);
+            this.addBtn.Size = new System.Drawing.Size(85, 28);
             this.addBtn.TabIndex = 4;
             this.addBtn.Text = "Add";
             this.addBtn.UseVisualStyleBackColor = true;
@@ -121,20 +120,19 @@ namespace ReaderEngine
             // 
             this.dateTimePickerTimer.CustomFormat = "HH:mm";
             this.dateTimePickerTimer.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerTimer.Location = new System.Drawing.Point(68, 361);
-            this.dateTimePickerTimer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerTimer.Location = new System.Drawing.Point(91, 444);
+            this.dateTimePickerTimer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerTimer.Name = "dateTimePickerTimer";
             this.dateTimePickerTimer.ShowUpDown = true;
-            this.dateTimePickerTimer.Size = new System.Drawing.Size(98, 20);
+            this.dateTimePickerTimer.Size = new System.Drawing.Size(129, 22);
             this.dateTimePickerTimer.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 361);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(17, 444);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.Size = new System.Drawing.Size(39, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Time";
             // 
@@ -146,28 +144,28 @@ namespace ReaderEngine
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewTransactionEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTransactionEmployee.Location = new System.Drawing.Point(194, 41);
-            this.dataGridViewTransactionEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewTransactionEmployee.Location = new System.Drawing.Point(259, 50);
+            this.dataGridViewTransactionEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewTransactionEmployee.Name = "dataGridViewTransactionEmployee";
             this.dataGridViewTransactionEmployee.ReadOnly = true;
             this.dataGridViewTransactionEmployee.RowHeadersWidth = 51;
             this.dataGridViewTransactionEmployee.RowTemplate.Height = 24;
-            this.dataGridViewTransactionEmployee.Size = new System.Drawing.Size(591, 422);
+            this.dataGridViewTransactionEmployee.Size = new System.Drawing.Size(788, 519);
             this.dataGridViewTransactionEmployee.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(194, 17);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(259, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 17);
+            this.label3.Size = new System.Drawing.Size(108, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Transaction";
             // 
             // timerRefresh
             // 
+            this.timerRefresh.Enabled = true;
             this.timerRefresh.Interval = 30000;
             this.timerRefresh.Tick += new System.EventHandler(this.timerRefresh_Tick);
             // 
@@ -181,9 +179,10 @@ namespace ReaderEngine
             // progressBar1
             // 
             this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBar1.Location = new System.Drawing.Point(0, 494);
+            this.progressBar1.Location = new System.Drawing.Point(0, 608);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(794, 17);
+            this.progressBar1.Size = new System.Drawing.Size(1059, 21);
             this.progressBar1.TabIndex = 20;
             // 
             // toolStrip1
@@ -192,16 +191,16 @@ namespace ReaderEngine
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dateTimeNow});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 469);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 583);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(794, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1059, 25);
             this.toolStrip1.TabIndex = 21;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // dateTimeNow
             // 
             this.dateTimeNow.Name = "dateTimeNow";
-            this.dateTimeNow.Size = new System.Drawing.Size(82, 22);
+            this.dateTimeNow.Size = new System.Drawing.Size(103, 22);
             this.dateTimeNow.Text = "dateTimeNow";
             // 
             // timer
@@ -212,9 +211,10 @@ namespace ReaderEngine
             // 
             // btnMail
             // 
-            this.btnMail.Location = new System.Drawing.Point(479, 13);
+            this.btnMail.Location = new System.Drawing.Point(639, 16);
+            this.btnMail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMail.Name = "btnMail";
-            this.btnMail.Size = new System.Drawing.Size(139, 23);
+            this.btnMail.Size = new System.Drawing.Size(185, 28);
             this.btnMail.TabIndex = 22;
             this.btnMail.Text = "Send eMail test";
             this.btnMail.UseVisualStyleBackColor = true;
@@ -222,9 +222,10 @@ namespace ReaderEngine
             // 
             // btnProcess
             // 
-            this.btnProcess.Location = new System.Drawing.Point(633, 13);
+            this.btnProcess.Location = new System.Drawing.Point(844, 16);
+            this.btnProcess.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnProcess.Name = "btnProcess";
-            this.btnProcess.Size = new System.Drawing.Size(149, 23);
+            this.btnProcess.Size = new System.Drawing.Size(199, 28);
             this.btnProcess.TabIndex = 23;
             this.btnProcess.Text = "Proses Log";
             this.btnProcess.UseVisualStyleBackColor = true;
@@ -232,9 +233,9 @@ namespace ReaderEngine
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 511);
+            this.ClientSize = new System.Drawing.Size(1059, 629);
             this.Controls.Add(this.btnProcess);
             this.Controls.Add(this.btnMail);
             this.Controls.Add(this.label3);
@@ -244,7 +245,7 @@ namespace ReaderEngine
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
