@@ -15,7 +15,7 @@ namespace ReaderEngine
         private string Sql;
         MySqlConnection myConn;
         string fileReport;
-        string sendto, ccto, subject, message;
+        string sendto, ccto, subject, message, sendtime;
 
         public frmMain()
         {
@@ -280,7 +280,10 @@ namespace ReaderEngine
         {
             try
             {
-                string query = "SELECT sendto, cc, SUBJECT, message FROM tbl_mastertemplateemail WHERE id = 1";
+                string koneksi = ConnectionDB.strProvider;
+                myConn = new MySqlConnection(koneksi);
+
+                string query = "SELECT sendto, cc, SUBJECT, message, sendtime FROM tbl_mastertemplateemail WHERE id = 1";
                 using (MySqlDataAdapter adpt = new MySqlDataAdapter(query, myConn))
                 {
                     DataTable dset = new DataTable();
@@ -291,6 +294,7 @@ namespace ReaderEngine
                         ccto = dset.Rows[0]["cc"].ToString();
                         subject = dset.Rows[0]["subject"].ToString();
                         message = dset.Rows[0]["message"].ToString();
+                        sendtime = dset.Rows[0]["sendtime"].ToString();
                     }
                 }
             }
@@ -338,7 +342,6 @@ namespace ReaderEngine
                 try
                 {
                     {
-
                         newMail.To = toaddr;
                         newMail.CC = ccaddr;
                         newMail.Subject = subjectmail+" "+ DateTime.Now.AddDays(-1).ToString("MMM dd, yyyy");
@@ -872,6 +875,9 @@ namespace ReaderEngine
 
         private void timer_Tick(object sender, EventArgs e)
         {
+            //get email detail data send to subject etc
+            emailDetail();
+
             string now = null;
             dateTimeNow.Text = DateTime.Now.ToString("HH:mm");
             now = DateTime.Now.ToString("HH:mm:00");
@@ -904,21 +910,20 @@ namespace ReaderEngine
                 }
             }
 
-            // running process send export email
-            if (DateTime.Now.ToString("HH:mm") == "10:30")
+            // send email based on setup email template
+            if (DateTime.Now.ToString("HH:mm:00") == sendtime)
             {
+                timer.Stop();
                 //----save to file/xls----
                 ExportToExcel();
-                // get detail email template
-                emailDetail();
 
                 //sendto email
                 if (SendMail(sendto, ccto, subject, message, fileReport))
                 {
                     //MessageBox.Show("email sent!");
                 }
+                timer.Start();
             }
-            
         }
 
         private void btnMail_Click(object sender, EventArgs e)
