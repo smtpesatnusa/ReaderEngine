@@ -15,6 +15,8 @@ namespace ReaderEngine
         private string Sql;
         MySqlConnection myConn;
         string fileReport;
+        string sendto, ccto, subject, message;
+
         public frmMain()
         {
             InitializeComponent();
@@ -223,11 +225,6 @@ namespace ReaderEngine
                         }
                     }
                 }
-
-                ////---send file via email---
-                //SendMail("ali.sadikincom85@gmail.com", "Ali Sadikin", "e:\\Summary.xlsx");
-                //SendMail("ali.sadikin@satnusa.com", "Ali Sadikin", "e:\\Summary.xlsx");
-
             }
             catch (System.Exception ex)
             {
@@ -279,28 +276,41 @@ namespace ReaderEngine
             return sukses;
         }
 
-        private bool SendMail(string mailaddr, string nama, string xlFile)
+        private void emailDetail()
+        {
+            try
+            {
+                string query = "SELECT sendto, cc, SUBJECT, message FROM tbl_mastertemplateemail WHERE id = 1";
+                using (MySqlDataAdapter adpt = new MySqlDataAdapter(query, myConn))
+                {
+                    DataTable dset = new DataTable();
+                    adpt.Fill(dset);
+                    if (dset.Rows.Count > 0)
+                    {
+                        sendto = dset.Rows[0]["sendto"].ToString();
+                        ccto = dset.Rows[0]["cc"].ToString();
+                        subject = dset.Rows[0]["subject"].ToString();
+                        message = dset.Rows[0]["message"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private bool SendMail(string toaddr, string ccaddr, string subjectmail, string mssgemail, string xlFile)
         {
             bool sukses = false;
             var objOutlook = new MsOutlook.Application();
 
-            //var objNs = objOutlook.GetNamespace("MAPI");
-            //objNs.Logon(null, null, true, true);
-
-            //MsOutlook.MAPIFolder fdMail;
-            //fdMail = objNs.GetDefaultFolder(MsOutlook.OlDefaultFolders.olFolderOutbox);
-
             MsOutlook.MailItem newMail;
             newMail = (MsOutlook.MailItem)objOutlook.CreateItem(MsOutlook.OlItemType.olMailItem);
-
-            //newMail = (MsOutlook.MailItem)fdMail.Items.Add(MsOutlook.OlItemType.olMailItem);
-
             MsOutlook.Accounts accounts = objOutlook.Session.Accounts;
             MsOutlook.Account acc = null;
 
-            //string accSender = "tesemail1922@gmail.com";
             string accSender = "netrayaattendance@gmail.com";
-
             foreach (MsOutlook.Account account in accounts)
             {
                 string smtpAddr = account.SmtpAddress;
@@ -312,7 +322,6 @@ namespace ReaderEngine
             }
 
             bool bRes = false;
-
             if (acc != null)
             {
                 //Use this account to send the e-mail. 
@@ -330,10 +339,10 @@ namespace ReaderEngine
                 {
                     {
 
-                        newMail.To = mailaddr;
-                        newMail.Subject = "Attendance report "+ DateTime.Now.AddDays(-1).ToString("MMM dd, yyyy");
-                        string strBody = "Dear " + nama + "\n";
-                        strBody += "Please find the attendance reports attached\n";
+                        newMail.To = toaddr;
+                        newMail.CC = ccaddr;
+                        newMail.Subject = subjectmail+" "+ DateTime.Now.AddDays(-1).ToString("MMM dd, yyyy");
+                        string strBody = mssgemail;
                         newMail.Body = strBody;
                         if (string.IsNullOrWhiteSpace(xlFile) == false)
                         {
@@ -341,7 +350,6 @@ namespace ReaderEngine
                         }
                         newMail.Send();
                         sukses = true;
-
                     }
                 }
                 catch (Exception ex)
@@ -350,7 +358,6 @@ namespace ReaderEngine
                 }
                 finally
                 {
-
                     newMail = null;
                     objOutlook = null;
                 }
@@ -902,8 +909,11 @@ namespace ReaderEngine
             {
                 //----save to file/xls----
                 ExportToExcel();
+                // get detail email template
+                emailDetail();
+
                 //sendto email
-                if (SendMail("ali.sadikin@satnusa.com", "Ali Sadikin", fileReport))
+                if (SendMail(sendto, ccto, subject, message, fileReport))
                 {
                     //MessageBox.Show("email sent!");
                 }
@@ -913,11 +923,6 @@ namespace ReaderEngine
 
         private void btnMail_Click(object sender, EventArgs e)
         {
-            //if (SendMail("ali.sadikin@satnusa.com", "Ali Sadikin", ""))
-            //{
-            //    MessageBox.Show("email sent!");
-            //}
-
             //if (SendSMTP("yosirwan@gmail.com", "Yos Irwan", ""))
             //{
             //    MessageBox.Show("email sent!");
@@ -925,16 +930,13 @@ namespace ReaderEngine
 
             //----save to file/xls----
             ExportToExcel();
+            // get detail email template
+            emailDetail();
             //sendto email
-            if (SendMail("tesemail1922@gmail.com", "Tes", fileReport))
+            if (SendMail(sendto, ccto, subject, message, fileReport))
             {
                 MessageBox.Show("email sent!");
             }
-
-            //if (SendMail("tesemail1922@gmail.com", "Test Email", fileReport))
-            //{
-            //    MessageBox.Show("email sent!");
-            //}
         }
 
         private void btnProcess_Click(object sender, EventArgs e)
