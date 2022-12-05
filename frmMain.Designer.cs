@@ -48,6 +48,7 @@ namespace ReaderEngine
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.btnMail = new System.Windows.Forms.Button();
             this.btnProcess = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProcessTime)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionEmployee)).BeginInit();
@@ -180,7 +181,7 @@ namespace ReaderEngine
             // 
             this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.progressBar1.Location = new System.Drawing.Point(0, 608);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(1059, 21);
             this.progressBar1.TabIndex = 20;
@@ -211,19 +212,19 @@ namespace ReaderEngine
             // 
             // btnMail
             // 
-            this.btnMail.Location = new System.Drawing.Point(639, 16);
-            this.btnMail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMail.Location = new System.Drawing.Point(651, 16);
+            this.btnMail.Margin = new System.Windows.Forms.Padding(4);
             this.btnMail.Name = "btnMail";
             this.btnMail.Size = new System.Drawing.Size(185, 28);
             this.btnMail.TabIndex = 22;
-            this.btnMail.Text = "Send eMail test";
+            this.btnMail.Text = "Send eMail";
             this.btnMail.UseVisualStyleBackColor = true;
             this.btnMail.Click += new System.EventHandler(this.btnMail_Click);
             // 
             // btnProcess
             // 
             this.btnProcess.Location = new System.Drawing.Point(844, 16);
-            this.btnProcess.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProcess.Margin = new System.Windows.Forms.Padding(4);
             this.btnProcess.Name = "btnProcess";
             this.btnProcess.Size = new System.Drawing.Size(199, 28);
             this.btnProcess.TabIndex = 23;
@@ -231,11 +232,23 @@ namespace ReaderEngine
             this.btnProcess.UseVisualStyleBackColor = true;
             this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
             // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(458, 16);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(185, 28);
+            this.btnExport.TabIndex = 24;
+            this.btnExport.Text = "Export Report";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1059, 629);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnProcess);
             this.Controls.Add(this.btnMail);
             this.Controls.Add(this.label3);
@@ -281,6 +294,7 @@ namespace ReaderEngine
         private System.Windows.Forms.ToolStripLabel dateTimeNow;
         private System.Windows.Forms.Button btnMail;
         private System.Windows.Forms.Button btnProcess;
+        private System.Windows.Forms.Button btnExport;
     }
 }
 
