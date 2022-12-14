@@ -49,10 +49,12 @@ namespace ReaderEngine
             this.btnMail = new System.Windows.Forms.Button();
             this.btnProcess = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
+            this.dataGridViewESDLog = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProcessTime)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionEmployee)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewESDLog)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -243,11 +245,30 @@ namespace ReaderEngine
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
+            // dataGridViewESDLog
+            // 
+            this.dataGridViewESDLog.AllowUserToAddRows = false;
+            this.dataGridViewESDLog.AllowUserToDeleteRows = false;
+            this.dataGridViewESDLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewESDLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewESDLog.Location = new System.Drawing.Point(259, 50);
+            this.dataGridViewESDLog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewESDLog.Name = "dataGridViewESDLog";
+            this.dataGridViewESDLog.ReadOnly = true;
+            this.dataGridViewESDLog.RowHeadersWidth = 51;
+            this.dataGridViewESDLog.RowTemplate.Height = 24;
+            this.dataGridViewESDLog.Size = new System.Drawing.Size(788, 519);
+            this.dataGridViewESDLog.TabIndex = 25;
+            this.dataGridViewESDLog.Visible = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1059, 629);
+            this.Controls.Add(this.dataGridViewESDLog);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnProcess);
             this.Controls.Add(this.btnMail);
@@ -271,6 +292,7 @@ namespace ReaderEngine
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionEmployee)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewESDLog)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,6 +317,7 @@ namespace ReaderEngine
         private System.Windows.Forms.Button btnMail;
         private System.Windows.Forms.Button btnProcess;
         private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.DataGridView dataGridViewESDLog;
     }
 }
 

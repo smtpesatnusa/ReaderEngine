@@ -16,6 +16,7 @@ namespace ReaderEngine
         MySqlConnection myConn;
         string fileReport;
         string sendto, ccto, subject, message, sendtime;
+        string maxTimeESD;
 
         public frmMain()
         {
@@ -110,13 +111,13 @@ namespace ReaderEngine
         {
             dateTimeNow.Text = DateTime.Now.ToString("HH:mm");
 
-            loadDataTimer();
-            loadDataTransaction();
-
             ReaderEnginee.BalloonTipIcon = ToolTipIcon.Info;
             ReaderEnginee.BalloonTipTitle = "RFID Reader Data Process";
             ReaderEnginee.BalloonTipText = "Application RFID Reader Data Process";
             ReaderEnginee.ShowBalloonTip(2000);
+
+            loadDataTimer();
+            loadDataTransaction();
 
             timerRefresh.Start();
         }
@@ -465,7 +466,7 @@ namespace ReaderEngine
                                 worksheet.Range(worksheet.Cell(cellRowIndexStartLate + cellRowIndexlate + 1, 1), worksheet.Cell(cellRowIndexStartLate + cellRowIndexlate + 1, 10)).Style.Alignment.SetVertical(XLAlignmentVerticalValues.Center);
 
                                 worksheet.Cell(cellRowIndexStartLate + cellRowIndexlate, 1).Value = "Workarea";
-                                worksheet.Cell(cellRowIndexStartLate + cellRowIndexlate, 3).Value = ": "+workarea;
+                                worksheet.Cell(cellRowIndexStartLate + cellRowIndexlate, 3).Value = ": " + workarea;
                                 //worksheet.Cell(3, 9).Value = "Total Late :" + total;
                                 worksheet.Cell(cellRowIndexStartLate + cellRowIndexlate + 1, 1).Value = "NO";
                                 worksheet.Cell(cellRowIndexStartLate + cellRowIndexlate + 1, 2).Value = "Badge ID";
@@ -756,7 +757,7 @@ namespace ReaderEngine
                     worksheetAbsent.PageSetup.Margins.Footer = 0.25;
                     worksheetAbsent.PageSetup.CenterHorizontally = true;
 
-                    worksheetAbsent.Range(worksheetAbsent.Cell(1, 1), worksheetAbsent.Cell(1, 6)).Merge();
+                    worksheetAbsent.Range(worksheetAbsent.Cell(1, 1), worksheetAbsent.Cell(1, 7)).Merge();
                     worksheetAbsent.Cell(1, 1).Style.Font.FontName = "Times New Roman";
                     worksheetAbsent.Cell(1, 1).Style.Font.Bold = true;
                     worksheetAbsent.Cell(1, 1).Style.Font.FontSize = 20;
@@ -766,15 +767,15 @@ namespace ReaderEngine
                     worksheetAbsent.Cell(1, 1).Style.Alignment.SetVertical(XLAlignmentVerticalValues.Center);
                     worksheetAbsent.Cell(1, 1).Value = "SMT ATTENDANCE SUMMARY";
 
-                    worksheetAbsent.Range(worksheetAbsent.Cell(2, 1), worksheetAbsent.Cell(3, 6)).Style.Font.FontName = "Times New Roman";
-                    worksheetAbsent.Range(worksheetAbsent.Cell(2, 1), worksheetAbsent.Cell(3, 6)).Style.Font.FontSize = 9;
-                    worksheetAbsent.Range(worksheetAbsent.Cell(2, 1), worksheetAbsent.Cell(3, 6)).Style.Font.Bold = true;
-                    worksheetAbsent.Range(worksheetAbsent.Cell(2, 4), worksheetAbsent.Cell(3, 6)).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Right);
+                    worksheetAbsent.Range(worksheetAbsent.Cell(2, 1), worksheetAbsent.Cell(3, 7)).Style.Font.FontName = "Times New Roman";
+                    worksheetAbsent.Range(worksheetAbsent.Cell(2, 1), worksheetAbsent.Cell(3, 7)).Style.Font.FontSize = 9;
+                    worksheetAbsent.Range(worksheetAbsent.Cell(2, 1), worksheetAbsent.Cell(3, 7)).Style.Font.Bold = true;
+                    worksheetAbsent.Range(worksheetAbsent.Cell(2, 4), worksheetAbsent.Cell(3, 7)).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Right);
                     worksheetAbsent.Range(worksheetAbsent.Cell(2, 1), worksheetAbsent.Cell(2, 3)).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Left);
                     worksheetAbsent.Cell(2, 1).Value = "Attendance Marked At";
                     worksheetAbsent.Cell(2, 3).Value = ": " + date;
-                    worksheetAbsent.Cell(2, 5).Value = "Report Date:";
-                    worksheetAbsent.Cell(2, 6).Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                    worksheetAbsent.Cell(2, 6).Value = "Report Date:";
+                    worksheetAbsent.Cell(2, 7).Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
                     int cellRowIndexStartAbsent = 3;
                     int cellRowIndexAbsent = 0;
@@ -798,12 +799,12 @@ namespace ReaderEngine
                                 int total = Convert.ToInt32(dt.Rows[i][1].ToString());
                                 total += total;
 
-                                worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent, 1), worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 6)).Style.Font.FontName = "Times New Roman";
-                                worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 1), worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 6)).Style.Font.FontSize = 10;
-                                worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 1), worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 6)).Style.Font.Bold = true;
-                                worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 1), worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 6)).Style.Fill.BackgroundColor = XLColor.Yellow;
-                                worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 1), worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 6)).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
-                                worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 1), worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 6)).Style.Alignment.SetVertical(XLAlignmentVerticalValues.Center);
+                                worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent, 1), worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 7)).Style.Font.FontName = "Times New Roman";
+                                worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 1), worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 7)).Style.Font.FontSize = 10;
+                                worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 1), worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 7)).Style.Font.Bold = true;
+                                worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 1), worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 7)).Style.Fill.BackgroundColor = XLColor.Yellow;
+                                worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 1), worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 7)).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+                                worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 1), worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 7)).Style.Alignment.SetVertical(XLAlignmentVerticalValues.Center);
                                 worksheetAbsent.Cell(1, 1).Style.Alignment.SetVertical(XLAlignmentVerticalValues.Center);
 
                                 worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent, 1).Value = "Workarea";
@@ -820,19 +821,20 @@ namespace ReaderEngine
                                 worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 4).Value = "Line Code";
                                 worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 5).Value = "Section";
                                 worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 6).Value = "Work Area";
-                                worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 1), worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 6)).Style.Border.TopBorder = XLBorderStyleValues.Medium;
-                                worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 1), worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 6)).Style.Border.BottomBorder = XLBorderStyleValues.Thin;
-                                worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 1), worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 6)).Style.Border.BottomBorder = XLBorderStyleValues.Double;
+                                worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 7).Value = "Reason";
+                                worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 1), worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 7)).Style.Border.TopBorder = XLBorderStyleValues.Medium;
+                                worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 1), worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 7)).Style.Border.BottomBorder = XLBorderStyleValues.Thin;
+                                worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 1), worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 7)).Style.Border.BottomBorder = XLBorderStyleValues.Double;
                                 worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 1).Style.Border.LeftBorder = XLBorderStyleValues.Medium;
-                                worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 6).Style.Border.RightBorder = XLBorderStyleValues.Medium;
+                                worksheetAbsent.Cell(cellRowIndexStartAbsent + cellRowIndexAbsent + 1, 7).Style.Border.RightBorder = XLBorderStyleValues.Medium;
 
                                 int cellRowIndex = cellRowIndexStartAbsent + cellRowIndexAbsent + 2;
                                 int cellColumnIndex = 2;
 
-                                Sql = "(SELECT badgeID, NAME, linecode, DESCRIPTION, workarea FROM (SELECT a.badgeID, a.NAME, a.linecode, b.description, a.workarea " +
-                                    "FROM tbl_employee a, tbl_masterlinecode b WHERE a.linecode = b.name AND badgeID NOT IN(SELECT b.badgeID FROM tbl_attendance a, tbl_employee b " +
-                                    "WHERE a.EmplId = b.id AND a.date = '" + date + "' AND a.intime IS NOT NULL)) AS A WHERE workarea = '"+workarea+ "' ) " +
-                                    "ORDER BY FIELD (DESCRIPTION, 'MGR', 'ENG', 'PC', 'PE', 'PROD', 'QC', 'STORE', 'CS'), workarea, linecode, NAME";
+                                Sql = "(SELECT badgeID, NAME, linecode, DESCRIPTION, workarea, reason FROM (SELECT a.badgeID, a.NAME, a.linecode, b.description, a.workarea, c.reason " +
+                        "FROM tbl_employee a, tbl_masterlinecode b, tbl_attendance c WHERE a.linecode = b.name AND a.id = c.emplID AND a.status = 1 AND c.date = '" + date + "'  AND badgeID " +
+                        "NOT IN(SELECT b.badgeID FROM tbl_attendance a, tbl_employee b WHERE a.EmplId = b.id AND a.date = '" + date + "' AND a.intime IS NOT NULL)) AS A " +
+                        "WHERE workarea = '" + workarea + "' ) ORDER BY FIELD(DESCRIPTION, 'MGR', 'ENG', 'PC', 'PE', 'PROD', 'QC', 'STORE', 'CS'), workarea, linecode, NAME";
 
                                 using (MySqlDataAdapter adptAbsent = new MySqlDataAdapter(Sql, myConn))
                                 {
@@ -843,8 +845,8 @@ namespace ReaderEngine
                                     {
                                         totalAbsent = totalAbsent + dtAbsent.Rows.Count;
 
-                                        worksheetAbsent.Cell(3, 5).Value = "Total Absent :";
-                                        worksheetAbsent.Cell(3, 6).Value = totalAbsent;
+                                        worksheetAbsent.Cell(3, 6).Value = "Total Absent :";
+                                        worksheetAbsent.Cell(3, 7).Value = totalAbsent;
                                         worksheetAbsent.Cell(cellRowIndex, 3).Value = ": " + workarea;
                                         worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndex, cellColumnIndex - 1), worksheetAbsent.Cell(dtAbsent.Rows.Count + cellRowIndex, 9)).Style.Font.FontName = "Times New Roman";
                                         worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndex, cellColumnIndex - 1), worksheetAbsent.Cell(dtAbsent.Rows.Count + cellRowIndex, 9)).Style.Font.FontSize = 9;
@@ -870,14 +872,14 @@ namespace ReaderEngine
                                         int endPartAbsent = dtAbsent.Rows.Count + cellRowIndex;
 
                                         // setup border 
-                                        worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndex, 1), worksheetAbsent.Cell(endPartAbsent - 1, 6)).Style.Border.BottomBorder = XLBorderStyleValues.Thin;
-                                        worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndex - 1, 2), worksheetAbsent.Cell(endPartAbsent - 1, 6)).Style.Border.LeftBorder = XLBorderStyleValues.Thin;
+                                        worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndex, 1), worksheetAbsent.Cell(endPartAbsent - 1, 7)).Style.Border.BottomBorder = XLBorderStyleValues.Thin;
+                                        worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndex - 1, 2), worksheetAbsent.Cell(endPartAbsent - 1, 7)).Style.Border.LeftBorder = XLBorderStyleValues.Thin;
                                         worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndex, 1), worksheetAbsent.Cell(endPartAbsent - 1, 1)).Style.Border.LeftBorder = XLBorderStyleValues.Medium;
-                                        worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndex, 6), worksheetAbsent.Cell(endPartAbsent - 1, 6)).Style.Border.RightBorder = XLBorderStyleValues.Medium;
-                                        worksheetAbsent.Range(worksheetAbsent.Cell(endPartAbsent - 1, 1), worksheetAbsent.Cell(endPartAbsent - 1, 6)).Style.Border.BottomBorder = XLBorderStyleValues.Medium;
+                                        worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndex, 7), worksheetAbsent.Cell(endPartAbsent - 1, 7)).Style.Border.RightBorder = XLBorderStyleValues.Medium;
+                                        worksheetAbsent.Range(worksheetAbsent.Cell(endPartAbsent - 1, 1), worksheetAbsent.Cell(endPartAbsent - 1, 7)).Style.Border.BottomBorder = XLBorderStyleValues.Medium;
 
                                         // set value Align center
-                                        worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndex - 1, 2), worksheetAbsent.Cell(endPartAbsent - 1, 6)).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+                                        worksheetAbsent.Range(worksheetAbsent.Cell(cellRowIndex - 1, 2), worksheetAbsent.Cell(endPartAbsent - 1, 7)).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
                                         cellRowIndexAbsent = endPartAbsent - 2;
                                     }
                                 }
@@ -886,7 +888,7 @@ namespace ReaderEngine
                         }
                         else
                         {
-                            worksheetAbsent.Range(worksheetAbsent.Cell(4, 1), worksheetAbsent.Cell(4, 6)).Merge();
+                            worksheetAbsent.Range(worksheetAbsent.Cell(4, 1), worksheetAbsent.Cell(4, 7)).Merge();
                             worksheetAbsent.Cell(4, 1).Style.Font.FontName = "Times New Roman";
                             worksheetAbsent.Cell(4, 1).Style.Font.Bold = true;
                             worksheetAbsent.Cell(4, 1).Style.Font.FontSize = 12;
@@ -895,7 +897,7 @@ namespace ReaderEngine
                             worksheetAbsent.Cell(4, 1).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
                             worksheetAbsent.Cell(4, 1).Style.Alignment.SetVertical(XLAlignmentVerticalValues.Center);
                             worksheetAbsent.Cell(4, 1).Value = "No Any Data";
-                            worksheetAbsent.Range(worksheetAbsent.Cell(4, 1), worksheetAbsent.Cell(4, 6)).Style.Fill.BackgroundColor = XLColor.Yellow;
+                            worksheetAbsent.Range(worksheetAbsent.Cell(4, 1), worksheetAbsent.Cell(4, 7)).Style.Fill.BackgroundColor = XLColor.Yellow;
                         }
                     }
                     workbook.SaveAs(directoryFile + "\\" + date + "\\Summary " + date + ".xlsx");
@@ -1008,47 +1010,61 @@ namespace ReaderEngine
             dateTimeNow.Text = DateTime.Now.ToString("HH:mm");
             now = DateTime.Now.ToString("HH:mm:00");
 
-            // running process attendance
-            int j = dataGridViewProcessTime.RowCount;
-            if (j > 0)
+            try
             {
-                for (int i = 0; i < j; i++)
+                // running process attendance
+                int j = dataGridViewProcessTime.RowCount;
+                if (j > 0)
                 {
-                    var row = dataGridViewProcessTime.Rows[i];
-                    string cellString = row.Cells[0].Value.ToString();
-                    if (cellString == now)
+                    for (int i = 0; i < j; i++)
                     {
-                        timer.Stop();
-                        try
+                        var row = dataGridViewProcessTime.Rows[i];
+                        string cellString = row.Cells[0].Value.ToString();
+                        // get data from ESD db and process data transaction
+                        if (cellString == now)
                         {
-                            processTransaction();
-                        }
-                        catch (System.Exception ex)
-                        {
+                            timer.Stop();
+                            try
+                            {
+                                // get data from ESD
+                                getLastTimeLog();
+                                loadDataESD();
+                                insertESDLog();
 
-                        }
-                        finally
-                        {
+                                // process data
+                                processTransaction();
+                            }
+                            catch (System.Exception ex)
+                            {
 
+                            }
+                            finally
+                            {
+
+                            }
+                            timer.Start();
                         }
-                        timer.Start();
                     }
                 }
-            }
 
-            // send email based on setup email template
-            if (DateTime.Now.ToString("HH:mm:00") == sendtime)
-            {
-                timer.Stop();
-                //----save to file/xls----
-                ExportToExcel();
-
-                //sendto email
-                if (SendMail(sendto, ccto, subject, message, fileReport))
+                // send email based on setup email template
+                if (DateTime.Now.ToString("HH:mm:00") == sendtime)
                 {
-                    //MessageBox.Show("email sent!");
+                    timer.Stop();
+                    //----save to file/xls----
+                    ExportToExcel();
+
+                    //sendto email
+                    if (SendMail(sendto, ccto, subject, message, fileReport))
+                    {
+                        //MessageBox.Show("email sent!");
+                    }
+                    timer.Start();
                 }
-                timer.Start();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -1076,6 +1092,12 @@ namespace ReaderEngine
 
             try
             {
+                // get data from ESD
+                getLastTimeLog();
+                loadDataESD();
+                insertESDLog();
+
+                // process data
                 processTransaction();
             }
             catch (System.Exception ex)
@@ -1087,6 +1109,115 @@ namespace ReaderEngine
 
             }
             timer.Start();
+        }
+
+
+        private void getLastTimeLog()
+        {
+            ConnectionDB connectionDB = new ConnectionDB();
+            try
+            {
+                string query = "SELECT MAX(timelog) AS maxTime FROM tbl_tempesd";
+                using (MySqlDataAdapter adpt = new MySqlDataAdapter(query, connectionDB.connection))
+                {
+                    DataTable dset = new DataTable();
+                    adpt.Fill(dset);
+                    if (dset.Rows.Count > 0)
+                    {
+                        maxTimeESD = Convert.ToDateTime(dset.Rows[0]["maxTime"]).ToString("yyyy-MM-dd HH:mm:ss");
+                    }
+                }
+            }
+            catch (System.Exception ex)
+            {
+                connectionDB.connection.Close();
+                //MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connectionDB.connection.Close();
+            }
+        }
+
+        private void loadDataESD()
+        {
+            ConnectionDBESD connectionDB = new ConnectionDBESD();
+            try
+            {
+                //string query = "SELECT emp_id, emp_name, timedate, stnno FROM esdresult WHERE timedate >= '" + maxTimeESD + "'  AND result = 'Pass' ORDER BY emp_name, timedate";
+                string query = "SELECT emp_id, emp_name, timedate, stnno FROM esdresult WHERE timedate >= '" + maxTimeESD + "'  AND result = 'Pass' ORDER BY timedate";
+                using (MySqlDataAdapter adpt = new MySqlDataAdapter(query, connectionDB.connection))
+                {
+                    DataSet dset = new DataSet();
+                    adpt.Fill(dset);
+                    dataGridViewESDLog.DataSource = dset.Tables[0];
+                }
+            }
+            catch (System.Exception ex)
+            {
+                connectionDB.connection.Close();
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connectionDB.connection.Close();
+            }
+        }
+
+        private void insertESDLog()
+        {
+            string koneksi = ConnectionDB.strProvider;
+            myConn = new MySqlConnection(koneksi);
+
+            try
+            {
+                var cmd = new MySqlCommand("", myConn);
+                myConn.Open();
+                //Buka koneksi
+
+                // truncate prev data 
+                string Query = "TRUNCATE tbl_tempesd";
+                cmd.CommandText = Query;
+                cmd.ExecuteNonQuery();
+
+                for (int i = 0; i < dataGridViewESDLog.Rows.Count; i++)
+                {
+                    string employeeID = dataGridViewESDLog.Rows[i].Cells[0].Value.ToString();
+                    string employeename = dataGridViewESDLog.Rows[i].Cells[1].Value.ToString();
+                    string timedate = Convert.ToDateTime(dataGridViewESDLog.Rows[i].Cells[2].Value).ToString("yyyy-MM-dd HH:mm:ss");
+                    string device = dataGridViewESDLog.Rows[i].Cells[3].Value.ToString();
+
+                    // query insert data part code
+                    string StrQuery = "INSERT INTO tbl_tempesd (emp_id, emp_name, timelog, device) " +
+                        "VALUES ('" + employeeID + "','"
+                         + employeename + "', '"
+                         + timedate + "', '"
+                         + device + "'); ";
+
+                    cmd.CommandText = StrQuery;
+                    cmd.ExecuteNonQuery();
+                }
+
+                // query insert data to log
+                string QueryESD = "INSERT INTO tbl_log(rfidno, ipDevice, indicator, timelog) " +
+                    "SELECT b.rfidno, IF(device LIKE '%SAESD%', 'SA-ESDGATE', 'SMT-ESDGATE') AS device, 'In' AS indicator, " +
+                    "a.timelog FROM tbl_tempesd a, tbl_employee b WHERE a.emp_id = b.badgeID ORDER BY a.timelog";
+
+                cmd.CommandText = QueryESD;
+                cmd.ExecuteNonQuery();
+
+                myConn.Close();
+                //Tutup koneksi
+            }
+            catch (Exception ex)
+            {
+                myConn.Close();
+                MessageBox.Show(ex.Message.ToString());
+            }
+            finally
+            {
+                myConn.Dispose();
+            }
         }
     }
 }
