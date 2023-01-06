@@ -493,5 +493,10 @@ namespace ReaderEngine
             g.Dispose();
             return newBmp;
         }
+
+        public int TotalNumberOfDaysInMonth(int year, int month)
+        {
+            return DateTime.DaysInMonth(year, month);
+        }
     }
 }

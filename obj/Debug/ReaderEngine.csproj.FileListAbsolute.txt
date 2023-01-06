@@ -89,6 +89,8 @@ C:\Users\mis\source\repos\ReaderEngine\obj\Debug\ReaderEngine.exe
 C:\Users\mis\source\repos\ReaderEngine\obj\Debug\ReaderEngine.pdb
 C:\Users\mis\source\repos\ReaderEngine\obj\Debug\ReaderEngine.csprojAssemblyReference.cache
 C:\Users\ASD-0131\source\repos\ReaderEngine\bin\Debug\ReaderEngine.exe.config
+C:\Users\ASD-0131\source\repos\ReaderEngine\bin\Debug\ReaderEngine.exe.manifest
+C:\Users\ASD-0131\source\repos\ReaderEngine\bin\Debug\ReaderEngine.application
 C:\Users\ASD-0131\source\repos\ReaderEngine\bin\Debug\ReaderEngine.exe
 C:\Users\ASD-0131\source\repos\ReaderEngine\bin\Debug\ReaderEngine.pdb
 C:\Users\ASD-0131\source\repos\ReaderEngine\bin\Debug\BouncyCastle.Crypto.dll
@@ -127,10 +129,13 @@ C:\Users\ASD-0131\source\repos\ReaderEngine\bin\Debug\System.Threading.Tasks.Ext
 C:\Users\ASD-0131\source\repos\ReaderEngine\obj\Debug\Interop.Microsoft.Office.Core.dll
 C:\Users\ASD-0131\source\repos\ReaderEngine\obj\Debug\Interop.Microsoft.Office.Interop.Outlook.dll
 C:\Users\ASD-0131\source\repos\ReaderEngine\obj\Debug\ReaderEngine.csproj.ResolveComReference.cache
+C:\Users\ASD-0131\source\repos\ReaderEngine\obj\Debug\ReaderEngine.logData.resources
 C:\Users\ASD-0131\source\repos\ReaderEngine\obj\Debug\ReaderEngine.frmMain.resources
 C:\Users\ASD-0131\source\repos\ReaderEngine\obj\Debug\ReaderEngine.Properties.Resources.resources
 C:\Users\ASD-0131\source\repos\ReaderEngine\obj\Debug\ReaderEngine.csproj.GenerateResource.cache
 C:\Users\ASD-0131\source\repos\ReaderEngine\obj\Debug\ReaderEngine.csproj.CoreCompileInputs.cache
+C:\Users\ASD-0131\source\repos\ReaderEngine\obj\Debug\ReaderEngine.exe.manifest
+C:\Users\ASD-0131\source\repos\ReaderEngine\obj\Debug\ReaderEngine.application
 C:\Users\ASD-0131\source\repos\ReaderEngine\obj\Debug\ReaderEngine.csproj.CopyComplete
 C:\Users\ASD-0131\source\repos\ReaderEngine\obj\Debug\ReaderEngine.exe
 C:\Users\ASD-0131\source\repos\ReaderEngine\obj\Debug\ReaderEngine.pdb
