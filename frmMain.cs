@@ -108,6 +108,8 @@ namespace ReaderEngine
 
         private void refresh()
         {
+            // update date when refresh
+            date = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
             // update data in datagridview time result
             this.dataGridViewProcessTime.DoubleBuffered(true);
             dataGridViewProcessTime.DataSource = null;
@@ -432,6 +434,9 @@ namespace ReaderEngine
                 {
                     // late sheet
                     var worksheet = workbook.Worksheets.Add("Late");
+
+                    // reset data late employee
+                    resetLate();
 
                     //to hide gridlines
                     worksheet.ShowGridLines = false;
@@ -996,6 +1001,9 @@ namespace ReaderEngine
                     // late sheet
                     var worksheet = workbook.Worksheets.Add("Late");
 
+                    // reset data late employee
+                    resetLate();
+
                     //to hide gridlines
                     worksheet.ShowGridLines = false;
 
@@ -1364,9 +1372,6 @@ namespace ReaderEngine
                         }
 
                         //===========================================================================================================================
-
-                        // reset data late employee
-                        resetLate();
 
                         // sheet TotalLate in month     
                         var worksheetLate = workbook.Worksheets.Add("TotalLate");

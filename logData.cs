@@ -249,6 +249,9 @@ namespace ReaderEngine
                     // late sheet
                     var worksheet = workbook.Worksheets.Add("Late");
 
+                    // reset data late employee
+                    resetLate();
+
                     //to hide gridlines
                     worksheet.ShowGridLines = false;
 
@@ -645,6 +648,9 @@ namespace ReaderEngine
                     // late sheet
                     var worksheet = workbook.Worksheets.Add("Late");
 
+                    // reset data late employee
+                    resetLate();
+
                     //to hide gridlines
                     worksheet.ShowGridLines = false;
 
@@ -1014,8 +1020,6 @@ namespace ReaderEngine
 
                         //===========================================================================================================================
 
-                        // reset data late employee
-                        resetLate();
 
                         // sheet TotalLate in month     
                         var worksheetLate = workbook.Worksheets.Add("TotalLate");
