@@ -110,6 +110,15 @@ namespace ReaderEngine
         {
             // update date when refresh
             date = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
+
+            DateTime time = Convert.ToDateTime(date);
+            year = time.ToString("yyyy");
+            month = time.ToString("MM");
+            dateReport = time.ToString("dd");
+
+            startDate = year + "-" + month + "-1";
+            endDate = year + "-" + month + "-" + dateReport;
+
             // update data in datagridview time result
             this.dataGridViewProcessTime.DoubleBuffered(true);
             dataGridViewProcessTime.DataSource = null;
