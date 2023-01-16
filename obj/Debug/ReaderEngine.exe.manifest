@@ -175,14 +175,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ReaderEngine.exe" size="120816">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ReaderEngine.exe" size="140784">
       <assemblyIdentity name="ReaderEngine" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>OK4AelKdpVr5TlHhtDC7X0okIHJgcYNgaDziw59boaY=</dsig:DigestValue>
+        <dsig:DigestValue>96aDgCoMMLxHkbfbI2jgvr5BXCw+6Yjff9frwdTrojI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
